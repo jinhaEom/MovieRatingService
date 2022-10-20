@@ -2,6 +2,7 @@ package bu.ac.kr.movieratingservice
 
 import android.app.Application
 import bu.ac.kr.movieratingservice.di.appModule
+import bu.ac.kr.movieratingservice.utility.MovieDataGenerator
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -24,5 +25,6 @@ class MovieReviewApplication: Application() {
             androidContext(this@MovieReviewApplication)
             modules(appModule)
         }
+        MovieDataGenerator().generate()
     }
 }

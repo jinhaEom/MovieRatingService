@@ -1,6 +1,6 @@
 package bu.ac.kr.movieratingservice.utility
 
-import bu.ac.kr.movieratingservice.domain.Movie
+import bu.ac.kr.movieratingservice.domain.model.Movie
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 

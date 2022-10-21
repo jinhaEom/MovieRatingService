@@ -1,4 +1,4 @@
-package bu.ac.kr.movieratingservice.domain
+package bu.ac.kr.movieratingservice.domain.model
 
 import android.os.Parcelable
 import com.google.firebase.firestore.DocumentId

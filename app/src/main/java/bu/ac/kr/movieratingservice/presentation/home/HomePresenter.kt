@@ -1,16 +1,18 @@
 package bu.ac.kr.movieratingservice.presentation.home
 
+import bu.ac.kr.movieratingservice.domain.usecase.GetAllMoviesUseCase
+import bu.ac.kr.movieratingservice.domain.usecase.GetRandomFeaturedMovieUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 
 class HomePresenter(
-    private val view : HomeContract.View,
-    private val getRandomFeaturedMovie : GetRandomFeaturedMovieUseCase,
-    private val getAllMovies : GetAllMoviesUseCase
+    private val view: HomeContract.View,
+    private val getRandomFeaturedMovie: GetRandomFeaturedMovieUseCase,
+    private val getAllMovies: GetAllMoviesUseCase
+) : HomeContract.Presenter {
 
-) : HomeContract.Presenter{
-    override val scope : CoroutineScope= MainScope()
+    override val scope: CoroutineScope = MainScope()
 
     override fun onViewCreated() {
         fetchMovies()

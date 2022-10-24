@@ -14,6 +14,8 @@ import bu.ac.kr.movieratingservice.domain.model.Movie
 import bu.ac.kr.movieratingservice.extension.dip
 import bu.ac.kr.movieratingservice.extension.toGone
 import bu.ac.kr.movieratingservice.extension.toVisible
+import bu.ac.kr.movieratingservice.presentation.home.HomeAdapter.Companion.ITEM_VIEW_TYPE_FEATURED
+import bu.ac.kr.movieratingservice.presentation.home.HomeAdapter.Companion.ITEM_VIEW_TYPE_SECTION_HEADER
 import org.koin.android.scope.ScopeFragment
 
 class HomeFragment : ScopeFragment(), HomeContract.View {

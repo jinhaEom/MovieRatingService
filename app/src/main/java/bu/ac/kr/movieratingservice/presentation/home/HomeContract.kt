@@ -8,15 +8,16 @@ import bu.ac.kr.movieratingservice.domain.model.Movie
 interface HomeContract {
 
     interface View : BaseView<Presenter> {
+
         fun showLoadingIndicator()
 
         fun hideLoadingIndicator()
 
-        fun showErrorDescription()
+        fun showErrorDescription(message: String)
 
         fun showMovies(
-            featuredMovie : FeaturedMovie?,
-            movies : List<Movie>
+            featuredMovie: FeaturedMovie?,
+            movies: List<Movie>
         )
     }
 

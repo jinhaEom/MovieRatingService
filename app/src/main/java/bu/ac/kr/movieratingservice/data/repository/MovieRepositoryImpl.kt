@@ -5,6 +5,7 @@ import bu.ac.kr.movieratingservice.domain.model.Movie
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
+/*
 class MovieRepositoryImpl(
     private val movieApi : MovieApi,
     private val dispatchers : CoroutineDispatcher
@@ -12,4 +13,4 @@ class MovieRepositoryImpl(
     override suspend fun getAllMovies(): List<Movie> = withContext(dispatchers) {
         movieApi.getAllMovies()
     }
-}
+}*/

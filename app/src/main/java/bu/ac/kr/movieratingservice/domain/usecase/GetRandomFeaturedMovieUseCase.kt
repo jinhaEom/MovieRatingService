@@ -1,8 +1,9 @@
 package bu.ac.kr.movieratingservice.domain.usecase
 
-import bu.ac.kr.movieratingservice.data.repository.MovieRepository
-import bu.ac.kr.movieratingservice.data.repository.ReviewRepository
+/*import bu.ac.kr.movieratingservice.data.repository.MovieRepository
+import bu.ac.kr.movieratingservice.data.repository.ReviewRepository*/
 import bu.ac.kr.movieratingservice.domain.model.FeaturedMovie
+/*
 
 class GetRandomFeaturedMovieUseCase(
     private val movieRepository: MovieRepository,
@@ -24,4 +25,4 @@ class GetRandomFeaturedMovieUseCase(
                 FeaturedMovie(movie, latestReview)
             }
     }
-}
+}*/

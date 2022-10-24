@@ -1,6 +1,6 @@
 package bu.ac.kr.movieratingservice.presentation.home
 
-import org.koin.android.scope.ScopeFragment
+import androidx.fragment.app.Fragment
 
-class HomeFragment: ScopeFragment() {
+class HomeFragment: Fragment() {
 }

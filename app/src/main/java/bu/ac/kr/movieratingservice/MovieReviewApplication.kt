@@ -3,28 +3,27 @@ package bu.ac.kr.movieratingservice
 import android.app.Application
 import bu.ac.kr.movieratingservice.di.appModule
 import bu.ac.kr.movieratingservice.utility.MovieDataGenerator
+import com.bumptech.glide.module.AppGlideModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
-
 import org.koin.core.logger.Level
 
-class MovieReviewApplication: Application() {
-
+class MovieReviewApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-
-        startKoin{
+        startKoin {
             androidLogger(
-                if(BuildConfig.DEBUG){
+                if (BuildConfig.DEBUG) {
                     Level.DEBUG
-                }else{
+                } else {
                     Level.NONE
                 }
             )
             androidContext(this@MovieReviewApplication)
             modules(appModule)
         }
+
         MovieDataGenerator().generate()
     }
 }

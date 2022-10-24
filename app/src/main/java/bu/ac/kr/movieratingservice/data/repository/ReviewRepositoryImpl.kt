@@ -5,6 +5,7 @@ import bu.ac.kr.movieratingservice.domain.model.Review
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
+/*
 class ReviewRepositoryImpl(
     private val reviewApi : ReviewApi,
     private val dispatchers : CoroutineDispatcher
@@ -13,4 +14,4 @@ class ReviewRepositoryImpl(
         reviewApi.getLatestReview(movieId)
 
     }
-}
+}*/

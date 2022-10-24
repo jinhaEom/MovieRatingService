@@ -37,7 +37,7 @@
 
         <argument
             android:name="movie"
-            app:argType="fastcampus.aop.part5.chapter07.domain.model.Movie" />
+            app:argType="bu.ac.kr.movieratingservice.domain.model.Movie" />
 
     </fragment>
 

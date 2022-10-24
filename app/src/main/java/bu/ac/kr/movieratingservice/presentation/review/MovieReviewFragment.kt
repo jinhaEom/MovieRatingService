@@ -1,6 +1,7 @@
 package bu.ac.kr.movieratingservice.presentation.review
 
-import org.koin.android.scope.ScopeFragment
+import androidx.fragment.app.Fragment
 
-class MovieReviewFragment: ScopeFragment() {
+
+class MovieReviewFragment: Fragment() {
 }

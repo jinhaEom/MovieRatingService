@@ -6,7 +6,7 @@ import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.toObject
 import kotlinx.coroutines.tasks.await
 
-/*
+
 class ReviewFirestoreApi(
     private val firestore: FirebaseFirestore
 ) : ReviewApi {
@@ -20,4 +20,4 @@ class ReviewFirestoreApi(
             .await()
             .map { it.toObject<Review>() }
             .firstOrNull()
-}*/
+}

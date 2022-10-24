@@ -2,8 +2,6 @@ package bu.ac.kr.movieratingservice
 
 import android.app.Application
 import bu.ac.kr.movieratingservice.di.appModule
-import bu.ac.kr.movieratingservice.utility.MovieDataGenerator
-import com.bumptech.glide.module.AppGlideModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -24,6 +22,5 @@ class MovieReviewApplication : Application() {
             modules(appModule)
         }
 
-        MovieDataGenerator().generate()
     }
 }

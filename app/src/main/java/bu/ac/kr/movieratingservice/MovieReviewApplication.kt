@@ -26,5 +26,6 @@ class MovieReviewApplication : Application() {
             androidContext(this@MovieReviewApplication)
             modules(appModule + dataModule + domainModule + presenterModule)
         }
+
     }
 }

@@ -12,6 +12,5 @@ class ReviewRepositoryImpl(
 ) : ReviewRepository{
     override suspend fun getLatestReview(movieId: String): Review? = withContext(dispatchers) {
         reviewApi.getLatestReview(movieId)
-
     }
 }

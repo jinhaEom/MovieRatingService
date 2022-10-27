@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import bu.ac.kr.movieratingservice.databinding.FragmentHomeBinding
+import bu.ac.kr.movieratingservice.di.appModule
 import bu.ac.kr.movieratingservice.domain.model.FeaturedMovie
 import bu.ac.kr.movieratingservice.domain.model.Movie
 import bu.ac.kr.movieratingservice.extension.dip
@@ -38,6 +39,7 @@ class HomeFragment : ScopeFragment(), HomeContract.View {
         bindView()
         presenter.onViewCreated()
     }
+
 
     override fun onDestroy() {
         super.onDestroy()

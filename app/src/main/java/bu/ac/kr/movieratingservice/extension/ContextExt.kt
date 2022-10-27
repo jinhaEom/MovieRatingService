@@ -5,4 +5,4 @@ import androidx.annotation.Px
 
 
 @Px
-fun Context.dip(dipValue:Float) = (dipValue * resources.displayMetrics.density).toInt()
+fun Context.dip(dipValue: Float) = (dipValue * resources.displayMetrics.density).toInt()

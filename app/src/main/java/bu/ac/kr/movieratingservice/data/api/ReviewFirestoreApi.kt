@@ -8,7 +8,7 @@ import kotlinx.coroutines.tasks.await
 
 
 class ReviewFirestoreApi(
-    private val firestore: FirebaseFirestore
+    private val firestore: FirebaseFirestore // 핫한 영화  firebaseStore 구성
 ) : ReviewApi {
 
     override suspend fun getLatestReview(movieId: String): Review? =

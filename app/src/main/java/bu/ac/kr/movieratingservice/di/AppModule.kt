@@ -9,6 +9,7 @@ import bu.ac.kr.movieratingservice.data.repository.MovieRepositoryImpl
 import bu.ac.kr.movieratingservice.data.repository.ReviewRepository
 import bu.ac.kr.movieratingservice.data.repository.ReviewRepositoryImpl
 import bu.ac.kr.movieratingservice.domain.usecase.GetAllMoviesUseCase
+import bu.ac.kr.movieratingservice.domain.usecase.GetAllReviewsUseCase
 import bu.ac.kr.movieratingservice.domain.usecase.GetRandomFeaturedMovieUseCase
 import bu.ac.kr.movieratingservice.presentation.home.HomeContract
 import bu.ac.kr.movieratingservice.presentation.home.HomeFragment
@@ -33,6 +34,7 @@ val dataModule = module {
 val domainModule = module{
     factory { GetRandomFeaturedMovieUseCase(get(),get())}
     factory { GetAllMoviesUseCase(get())}
+    factory { GetAllReviewsUseCase(get())}
 }
 val presenterModule = module {
     scope<HomeFragment> {

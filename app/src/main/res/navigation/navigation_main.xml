@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/movie_reviews_dest"
-        android:name="bu.ac.kr.movieratingservice.presentation.review.MovieReviewFragment"
+        android:name="bu.ac.kr.movieratingservice.presentation.review.MovieReviewsFragment"
         android:label="@string/title_movie_reviews"
         tools:layout="@layout/fragment_movie_reviews">
 

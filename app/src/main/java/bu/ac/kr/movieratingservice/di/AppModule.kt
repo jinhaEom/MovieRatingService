@@ -8,12 +8,16 @@ import bu.ac.kr.movieratingservice.data.repository.MovieRepository
 import bu.ac.kr.movieratingservice.data.repository.MovieRepositoryImpl
 import bu.ac.kr.movieratingservice.data.repository.ReviewRepository
 import bu.ac.kr.movieratingservice.data.repository.ReviewRepositoryImpl
+import bu.ac.kr.movieratingservice.domain.model.Movie
 import bu.ac.kr.movieratingservice.domain.usecase.GetAllMoviesUseCase
 import bu.ac.kr.movieratingservice.domain.usecase.GetAllReviewsUseCase
 import bu.ac.kr.movieratingservice.domain.usecase.GetRandomFeaturedMovieUseCase
 import bu.ac.kr.movieratingservice.presentation.home.HomeContract
 import bu.ac.kr.movieratingservice.presentation.home.HomeFragment
 import bu.ac.kr.movieratingservice.presentation.home.HomePresenter
+import bu.ac.kr.movieratingservice.presentation.review.MovieReviewsContract
+import bu.ac.kr.movieratingservice.presentation.review.MovieReviewsFragment
+import bu.ac.kr.movieratingservice.presentation.review.MovieReviewsPresenter
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.Dispatchers
@@ -39,5 +43,8 @@ val domainModule = module{
 val presenterModule = module {
     scope<HomeFragment> {
         scoped<HomeContract.Presenter> { HomePresenter(getSource(),get(),get())  }
+    }
+    scope<MovieReviewsFragment>{
+        scoped< MovieReviewsContract.Presenter> { (movie: Movie) -> MovieReviewsPresenter(getSource(), movie, get())}
     }
 }

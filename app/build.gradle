@@ -8,12 +8,12 @@ plugins {
 }
 
 android {
-    compileSdk 30
+    compileSdk 33
 
     defaultConfig {
         applicationId "bu.ac.kr.movieratingservice"
-        minSdk 21
-        targetSdk 30
+        minSdk 29
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 

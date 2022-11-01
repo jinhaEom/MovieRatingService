@@ -1,16 +1,26 @@
 package bu.ac.kr.movieratingservice.presentation.review
 
+import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.core.view.isVisible
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import bu.ac.kr.movieratingservice.databinding.FragmentMovieReviewsBinding
+import bu.ac.kr.movieratingservice.domain.model.Movie
+import bu.ac.kr.movieratingservice.domain.model.Review
 import org.koin.android.scope.ScopeFragment
 import org.koin.core.parameter.parametersOf
+import org.koin.java.KoinJavaComponent.inject
 
 
-class MovieReviewsFragment: ScopeFragment(). MovieReviewsContract.View {
+class MovieReviewsFragment: ScopeFragment() ,MovieReviewsContract.View {
 
     override val presenter : MovieReviewsContract.Presenter by inject { parametersOf(arguments.movie)}
 

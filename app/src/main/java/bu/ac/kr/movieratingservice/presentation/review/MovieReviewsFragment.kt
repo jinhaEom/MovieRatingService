@@ -35,9 +35,10 @@ class MovieReviewsFragment: ScopeFragment() ,MovieReviewsContract.View {
         .also { binding = it }
         .root
 
-    override fun onViewCreated(view : View, savedInstanceState: Bundle?){
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        initViews()
+        presenter.onViewCreated()
     }
     override fun onDestroy() {
         super.onDestroy()
@@ -59,7 +60,7 @@ class MovieReviewsFragment: ScopeFragment() ,MovieReviewsContract.View {
     }
     override fun showReviews(reviews : List<Review>){
         binding?.recyclerView?.isVisible = true
-        binding?.errorDescriptionTextview?.isVisible = false
+        binding?.errorDescriptionTextView?.isVisible = false
         (binding?.recyclerView?.adapter as? MovieReviewsAdapter)?.apply{
             this.reviews = reviews
             notifyDataSetChanged()

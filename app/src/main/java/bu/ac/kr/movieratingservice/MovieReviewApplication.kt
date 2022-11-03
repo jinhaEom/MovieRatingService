@@ -18,14 +18,12 @@ class MovieReviewApplication : Application() {
             androidLogger(
                 if (BuildConfig.DEBUG) {
                     Level.DEBUG
-                }
-                else {
+                } else {
                     Level.NONE
                 }
             )
             androidContext(this@MovieReviewApplication)
             modules(appModule + dataModule + domainModule + presenterModule)
         }
-
     }
 }

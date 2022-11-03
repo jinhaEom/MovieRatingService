@@ -1,5 +1,9 @@
 package bu.ac.kr.movieratingservice.presentation.review
 
+import bu.ac.kr.movieratingservice.BasePresenter
+import bu.ac.kr.movieratingservice.BaseView
+import bu.ac.kr.movieratingservice.domain.model.Movie
+import bu.ac.kr.movieratingservice.domain.model.Review
 
 
 interface MovieReviewsContract {
@@ -17,7 +21,7 @@ interface MovieReviewsContract {
         fun showReviews(reviews: List<Review>)
 
     }
-    interface Presenter : BasePresenter{
+    interface Presenter : BasePresenter {
         val movie : Movie
     }
 }

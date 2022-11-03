@@ -45,6 +45,6 @@ val presenterModule = module {
         scoped<HomeContract.Presenter> { HomePresenter(getSource(),get(),get())  }
     }
     scope<MovieReviewsFragment>{
-        scoped< MovieReviewsContract.Presenter> { (movie: Movie) -> MovieReviewsPresenter(getSource(), movie, get())}
+        scoped<MovieReviewsContract.Presenter> { (movie: Movie) -> MovieReviewsPresenter(getSource(), movie, get())}
     }
 }

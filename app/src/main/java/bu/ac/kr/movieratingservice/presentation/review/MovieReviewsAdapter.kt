@@ -52,21 +52,21 @@ class MovieReviewsAdapter(private val movie : Movie) : RecyclerView.Adapter<Recy
             RecyclerView.ViewHolder(binding.root){
 
         @SuppressLint("SetTextI18n")
-        fun bind(item : Movie){
+        fun bind(item: Movie) {
             Glide.with(binding.root)
                 .load(item.posterUrl)
                 .into(binding.posterImageView)
 
             item.let {
                 binding.averageScoreTextView.text =
-                    "평점 ${it.averageScore?.toDecimalFormatString("0.0")} (${it.numberOfScore?.toAbbreviatedString()}"
+                    "평점 ${it.averageScore?.toDecimalFormatString("0.0")} (${it.numberOfScore?.toAbbreviatedString()})"
                 binding.titleTextView.text = it.title
-                binding.additionalInformationTextView.text= "${it.releaseYear}-${it.country}"
-                binding.relationsTextView.text= "감독: ${it.director}\n출연진: ${it.actors}"
+                binding.additionalInformationTextView.text = "${it.releaseYear}·${it.country}"
+                binding.relationsTextView.text = "감독: ${it.director}\n출연진: ${it.actors}"
                 binding.genreChipGroup.removeAllViews()
-                it.genre?.split("")?.forEach { genre ->
+                it.genre?.split(" ")?.forEach { genre ->
                     binding.genreChipGroup.addView(
-                        Chip(binding.root.context).apply{
+                        Chip(binding.root.context).apply {
                             isClickable = false
                             text = genre
                         }
@@ -74,8 +74,8 @@ class MovieReviewsAdapter(private val movie : Movie) : RecyclerView.Adapter<Recy
                 }
             }
         }
+    }
 
-            }
     inner class ReviewViewHolder(
         parent : ViewGroup,
         private val binding : ItemReviewBinding = ItemReviewBinding.inflate(

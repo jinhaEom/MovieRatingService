@@ -6,12 +6,13 @@ import java.util.*
 
 data class Review(
     @DocumentId
-    val id : String? =null,
+    val id: String? = null,
 
     @ServerTimestamp
-    val createdAt : Date? = null,
-    val userId : String? = null,
-    val content : String? = null,
-    val score : Float? = null
-) {
-}
+    val createdAt: Date? = null,
+
+    val userId: String? = null,
+    val movieId: String? = null,
+    val content: String? = null,
+    val score: Float? = null
+)

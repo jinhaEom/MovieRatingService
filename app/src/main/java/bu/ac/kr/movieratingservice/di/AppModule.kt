@@ -1,7 +1,6 @@
 package bu.ac.kr.movieratingservice.di
 
 import android.app.Activity
-import android.preference.PreferenceManager
 import bu.ac.kr.movieratingservice.data.api.MovieApi
 import bu.ac.kr.movieratingservice.data.api.MovieFirestoreApi
 import bu.ac.kr.movieratingservice.data.api.ReviewApi
@@ -12,6 +11,8 @@ import bu.ac.kr.movieratingservice.domain.usecase.GetAllMoviesUseCase
 import bu.ac.kr.movieratingservice.domain.usecase.GetAllReviewsUseCase
 import bu.ac.kr.movieratingservice.domain.usecase.GetMyReviewedMoviesUseCase
 import bu.ac.kr.movieratingservice.domain.usecase.GetRandomFeaturedMovieUseCase
+import bu.ac.kr.movieratingservice.preference.PreferenceManager
+import bu.ac.kr.movieratingservice.preference.SharedPreferenceManager
 import bu.ac.kr.movieratingservice.presentation.home.HomeContract
 import bu.ac.kr.movieratingservice.presentation.home.HomeFragment
 import bu.ac.kr.movieratingservice.presentation.home.HomePresenter

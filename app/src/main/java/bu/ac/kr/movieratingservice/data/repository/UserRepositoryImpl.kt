@@ -1,8 +1,8 @@
 package bu.ac.kr.movieratingservice.data.repository
 
-import android.preference.PreferenceManager
 import bu.ac.kr.movieratingservice.data.api.UserApi
 import bu.ac.kr.movieratingservice.domain.model.User
+import bu.ac.kr.movieratingservice.preference.PreferenceManager
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
@@ -13,8 +13,7 @@ class UserRepositoryImpl(
     private val dispatchers: CoroutineDispatcher ) : UserRepository{
 
     override suspend fun getUser(): User? = withContext(dispatchers) {
-        preferenceManager.getString(KEY_USER_ID)?.LET { User(it)}
-
+        preferenceManager.getString(KEY_USER_ID)?.let { User(it) }
     }
     override suspend fun saveUser(user:User) = withContext(dispatchers){
         val newUser = userApi.saveUser(user)

@@ -4,17 +4,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.GridLayout
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import bu.ac.kr.movieratingservice.databinding.FragmentMyPageBinding
 import bu.ac.kr.movieratingservice.domain.model.ReviewedMovie
+import bu.ac.kr.movieratingservice.extension.dip
 import bu.ac.kr.movieratingservice.extension.toGone
 import bu.ac.kr.movieratingservice.extension.toVisible
+import bu.ac.kr.movieratingservice.presentation.home.GridSpacingItemDecoration
 import org.koin.android.scope.ScopeFragment
 
 
-class myPageFragment: ScopeFragment(), MyPageContract.View {
+class MyPageFragment : ScopeFragment(), MyPageContract.View {
 
-    override val presenter : MyPageContract.Presenter by inject()
+    override val presenter: MyPageContract.Presenter by inject()
 
     private var binding: FragmentMyPageBinding? = null
 
@@ -51,5 +57,26 @@ class myPageFragment: ScopeFragment(), MyPageContract.View {
         binding?.descriptionTextView?.text = message
     }
 
+    override fun showReviewedMovies(reviewedMovies: List<ReviewedMovie>) {
+        (binding?.recyclerView?.adapter as? MyPageAdapter)?.apply{
+            this.reviewedMovies = reviewedMovies
+            notifyDataSetChanged()
+        }
+    }
+    private fun initViews() {
+        binding?.recyclerView?.apply{
+            adapter = MyPageAdapter()
+            layoutManager = GridLayoutManager(context,3, RecyclerView.VERTICAL, false)
+            addItemDecoration(GridSpacingItemDecoration(3,dip(6f)))
 
+        }
+    }
+    private fun bindView() {
+        (binding?.recyclerView?.adapter as? MyPageAdapter)?.apply{
+            onMovieClickListener = { movie ->
+                val action = myPageFragmentDirections.toMovieReviewsAction(movie)
+                findNavController().navigate(action)
+            }
+        }
+    }
 }

@@ -5,20 +5,20 @@ import bu.ac.kr.movieratingservice.BaseView
 import bu.ac.kr.movieratingservice.domain.model.ReviewedMovie
 import bu.ac.kr.movieratingservice.presentation.review.MovieReviewsContract
 
-class MyPageContract {
+interface MyPageContract {
 
-    interface View : BaseView<MovieReviewsContract.Presenter> {
+    interface View : BaseView<Presenter> {
+
         fun showLoadingIndicator()
 
         fun hideLoadingIndicator()
 
-        fun showNoDataDescription(message : String)
+        fun showNoDataDescription(message: String)
 
-        fun showErrorDescription(message : String)
+        fun showErrorDescription(message: String)
 
-        fun showReviewedMovies(reviewedMovies : List<ReviewedMovie>)
-
-
+        fun showReviewedMovies(reviewedMovies: List<ReviewedMovie>)
     }
+
     interface Presenter : BasePresenter
 }

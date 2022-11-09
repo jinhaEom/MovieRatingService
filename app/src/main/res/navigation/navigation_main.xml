@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/my_page_dest"
-        android:name="bu.ac.kr.movieratingservice.presentation.mypage.myPageFragment"
+        android:name="bu.ac.kr.movieratingservice.presentation.mypage.MyPageFragment"
         android:label="@string/title_my_page"
         tools:layout="@layout/fragment_my_page">
 

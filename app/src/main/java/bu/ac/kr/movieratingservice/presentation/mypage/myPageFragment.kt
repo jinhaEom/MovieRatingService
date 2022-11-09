@@ -17,7 +17,6 @@ import bu.ac.kr.movieratingservice.extension.toVisible
 import bu.ac.kr.movieratingservice.presentation.home.GridSpacingItemDecoration
 import org.koin.android.scope.ScopeFragment
 
-
 class MyPageFragment : ScopeFragment(), MyPageContract.View {
 
     override val presenter: MyPageContract.Presenter by inject()
@@ -29,8 +28,15 @@ class MyPageFragment : ScopeFragment(), MyPageContract.View {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View = FragmentMyPageBinding.inflate(inflater, container, false)
-        .also { binding = it}
+        .also { binding = it }
         .root
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initViews()
+        bindView()
+        presenter.onViewCreated()
+    }
 
     override fun onDestroy() {
         super.onDestroy()
@@ -58,23 +64,24 @@ class MyPageFragment : ScopeFragment(), MyPageContract.View {
     }
 
     override fun showReviewedMovies(reviewedMovies: List<ReviewedMovie>) {
-        (binding?.recyclerView?.adapter as? MyPageAdapter)?.apply{
+        (binding?.recyclerView?.adapter as? MyPageAdapter)?.apply {
             this.reviewedMovies = reviewedMovies
             notifyDataSetChanged()
         }
     }
-    private fun initViews() {
-        binding?.recyclerView?.apply{
-            adapter = MyPageAdapter()
-            layoutManager = GridLayoutManager(context,3, RecyclerView.VERTICAL, false)
-            addItemDecoration(GridSpacingItemDecoration(3,dip(6f)))
 
+    private fun initViews() {
+        binding?.recyclerView?.apply {
+            adapter = MyPageAdapter()
+            layoutManager = GridLayoutManager(context, 3, RecyclerView.VERTICAL, false)
+            addItemDecoration(GridSpacingItemDecoration(3, dip(6f)))
         }
     }
+
     private fun bindView() {
-        (binding?.recyclerView?.adapter as? MyPageAdapter)?.apply{
+        (binding?.recyclerView?.adapter as? MyPageAdapter)?.apply {
             onMovieClickListener = { movie ->
-                val action = myPageFragmentDirections.toMovieReviewsAction(movie)
+                val action = MyPageFragmentDirections.toMovieReviewsAction(movie)
                 findNavController().navigate(action)
             }
         }
